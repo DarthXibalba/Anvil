@@ -64,7 +64,7 @@ Use a container when *you trust the code* and *don't require a real machine boun
 - Blast radius is acceptable if something were to break out
 
 
-## Light VM - 1 vCPU / 2 GB
+## Light
 The Light profile is on the other side of the edge of the blade of containers. This is meant to run operating systems with the most minimal overhead and most likely without a GUI.
 
 ### Typical Use Cases
@@ -78,3 +78,96 @@ The Light profile is on the other side of the edge of the blade of containers. T
 - Automation controller nodes (Ansible/Terraform) when isolation matters
 - Security tooling where you don’t trust dependencies
 - Disposable infra nodes in a lab
+
+### Why a VM instead of a container?
+- Separate kernel
+- Separate syscall surface
+- Easy full teardown
+- Accurate OS behavior
+
+### Why not Medium
+- No GUI
+- No IDE
+- No sustained interactive load
+
+
+## Medium
+The Medium profile is geared towards general purpose computing. Allows for enough horsepower to run a GUI comfortably. More for general web browsing or light prototyping.
+
+### Typical Use Cases
+- General development (IDE + browser)
+- Cloud learning labs (AWS/GCP/Azure)
+- IaC work with local testing
+- Light Docker usage (compose with a few services)
+- “Safe browsing” VM
+- Personal admin tasks (finance, docs, portals)
+- GUI-based security tools
+- Small data analysis (pandas, notebooks)
+
+### Why Medium VM and not a Light
+- GUI
+- More broader toolset installed
+- Long-lived state with user ergonomics
+
+### Why not Heavy
+- Not build or compute-heavy hardware allocation
+- Meant more for responsiveness than throughput
+
+
+## Heavy
+The Heavy profile is designed to be your go-to performance workstaion. Typically more data-intensive processes.
+
+### Typical Use Cases
+- Large codebases
+- Parallel builds
+- Docker-heavy dev stacks
+- Multiple local services
+- ML prototyping (CPU-heavy, GPU-light)
+- Jupyter with moderate datasets
+- Local observability stacks
+- Databases with meaningful data volume
+- Security labs with multiple tools running concurrently
+
+### Why Heavy?
+- CPU parallelism matters
+- Memory caching matters
+- Medium starts to feel sluggish
+
+
+## Ultra
+The Ultra profile is for tasks that require the majority of the physical machine's capabilities. Ultra VMs are essentially dedicated domain machines.
+
+### Typical Use Cases
+- ML training or serious experimentation
+- GPU passthrough development
+- Large datasets in memory
+- Long-running notebooks / experiments
+- Big infra simulations (k8s, distributed systems)
+- Integration test environments
+- “Primary machine for this domain”
+
+### Operational Reality
+- Typically 1 Ultra VM active at a time
+- Other VMs are Light/Medium or paused
+- Meant for operational maximum while maintaining system stability
+
+### Why not Heavy
+- Want to avoid resource contention
+- Require even more horsepower than what heavy provides
+
+
+## Max
+Max is the experimental profile meant to yield the maximum amount of resources from the physical workstation while still providing some guardrails for basic reliability. Stability is traded for performance, and may require tweaking to get the right balance.
+
+### Typical Use Cases
+- Near–bare-metal experiments
+- Stress testing host + storage + memory
+- Huge in-memory workloads
+- Large model training
+- Performance characterization
+- One-off, high-risk experiments
+
+### Operational Expectations
+- Host responsiveness may degrade
+- Other VMs stopped or minimal
+- Manual tuning likely required
