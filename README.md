@@ -64,7 +64,7 @@ Use a container when *you trust the code* and *don't require a real machine boun
 - Blast radius is acceptable if something were to break out
 
 
-## Light
+## Light :star:
 The Light profile is on the other side of the edge of the blade of containers. This is meant to run operating systems with the most minimal overhead and most likely without a GUI.
 
 ### Typical Use Cases
@@ -91,7 +91,7 @@ The Light profile is on the other side of the edge of the blade of containers. T
 - No sustained interactive load
 
 
-## Medium
+## Medium :star::star:
 The Medium profile is geared towards general purpose computing. Allows for enough horsepower to run a GUI comfortably. More for general web browsing or light prototyping.
 
 ### Typical Use Cases
@@ -114,7 +114,7 @@ The Medium profile is geared towards general purpose computing. Allows for enoug
 - Meant more for responsiveness than throughput
 
 
-## Heavy
+## Heavy :star::star::star:
 The Heavy profile is designed to be your go-to performance workstaion. Typically more data-intensive processes.
 
 ### Typical Use Cases
@@ -134,7 +134,7 @@ The Heavy profile is designed to be your go-to performance workstaion. Typically
 - Medium starts to feel sluggish
 
 
-## Ultra
+## Ultra :star::star::star::star:
 The Ultra profile is for tasks that require the majority of the physical machine's capabilities. Ultra VMs are essentially dedicated domain machines.
 
 ### Typical Use Cases
@@ -156,7 +156,7 @@ The Ultra profile is for tasks that require the majority of the physical machine
 - Require even more horsepower than what heavy provides
 
 
-## Max
+## Max :star::star::star::star::star:
 Max is the experimental profile meant to yield the maximum amount of resources from the physical workstation while still providing some guardrails for basic reliability. Stability is traded for performance, and may require tweaking to get the right balance.
 
 ### Typical Use Cases
