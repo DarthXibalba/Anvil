@@ -13,7 +13,7 @@ CLI wrapper around virsh & virt-manager used for cloning VMs based on a specifie
 | Light | 1 | 2 GB | 12 GB | 2 GB / core |
 | ***Light+*** | ***2*** | ***4 GB*** | ***24 GB*** |
 | Medium | 4 | 8 GB | 36 GB |
-| ***Medium+*** | ***6*** | ***12 GB*** | ***64 GB*** |
+| ***Medium+*** | ***6*** | ***16 GB*** | ***64 GB*** |
 | Heavy | 8 | 24 GB | 128 GB | 3 GB / core |
 | ***Heavy+*** | ***12*** | ***36 GB*** | ***256 GB*** |
 | Ultra | 16 | 64 GB | 512 GB | ~4 GB / core |
